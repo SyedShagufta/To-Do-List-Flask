@@ -7,7 +7,6 @@ This is a simple To-Do List application built using Flask, a lightweight web app
 - Add new tasks
 - View all tasks
 - Mark tasks as completed
-- Edit tasks
 - Delete tasks
 
 ## Requirements
@@ -28,10 +27,6 @@ This is a simple To-Do List application built using Flask, a lightweight web app
 
 - The home page displays a list of all tasks.
 
-### Editing a Task
-
-- Click on the "Edit" button next to the task you want to edit.
-- Update the task details and click "Submit".
 
 ### Deleting a Task
 
