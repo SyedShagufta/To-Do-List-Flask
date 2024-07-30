@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+</head>
+<body>
+
+    <h1>To-Do List</h1>
+
+    <form action="{{url_for('home')}}" method="POST">
+        <input name="task" type="text" />
+        <button name="add_task" type="submit">Add Task</button>
+    </form>
+
+    <ul>
+        {% if not task_list %}
+            <li>No Tasks to display ☹️</li>
+        {% else %}
+            {% for tasks in task_list %}
+                {% if tasks.completed %}
+                    <li style="text-decoration: line-through;">{{ tasks.task }}</li>
+                {% else %}
+                        <li>{{tasks.task}}</li>
+                 {% endif %}
+                <a href="{{ url_for('delete', id=tasks.id) }}">Delete</a>
+                <a href="{{ url_for('mark_done', id=tasks.id) }}">Mark as Complete</a>
+            {% endfor %}
+        {% endif %}
+    </ul>
+
+
+</body>
+</html>
